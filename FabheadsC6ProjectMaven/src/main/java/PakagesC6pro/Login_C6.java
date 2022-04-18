@@ -26,8 +26,7 @@ public class Login_C6
 			Thread.sleep(2000);
 			
 			String Name =avDriver.getTitle();
-			System.out.println("PAGE TITLE IS : "+Name);
-			
+			System.out.println("PAGE TITLE : "+Name);
 
 			WebElement myemail=avDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
 			myemail.sendKeys("vaibhavsharma3070@gmail.com");

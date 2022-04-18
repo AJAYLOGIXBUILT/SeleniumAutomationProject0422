@@ -19,7 +19,7 @@ public class Register_C6 {
 																
 			//Maximize the screen 
 			avDriver.manage().window().maximize();
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			
 			//Launch the site in Chrome browsers.
 			avDriver.get("https://c6-staging.fabheads.com/login");
