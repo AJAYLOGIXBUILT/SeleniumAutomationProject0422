@@ -36,7 +36,25 @@ public class Register_C6 {
 			//Fill Email 
 			WebElement myemail=avDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-register[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
 			myemail.sendKeys("vaibhavsharma3070@gmail.com");
+			
+			String Verifyregistration_Status = null;
+		    String Verifyregistration_Message = null;
+
+			//String Emma ="A user is already registered with this e-mail address.";
+			
 			Thread.sleep(1000);
+			try
+			{
+				if(Verifyregistration_Status!="")
+				{
+					System.out.println("USER EMAIL IS ALREADY EXISTS");	
+				}
+				
+			}
+			catch(Exception e)
+			{
+				System.out.println("USER EMAIL IS ALREADY EXISTS");	
+			}
 
 			//Filled Password 
 			WebElement mypsd=avDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-register[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[2]/ion-input[1]/input[1]"));
