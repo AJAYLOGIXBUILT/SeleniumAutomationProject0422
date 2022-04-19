@@ -12,24 +12,20 @@ import org.testng.annotations.AfterClass;
 public class TestngScriptMAVEN 
 {
 	
-	//WebDriver proDriver = new ChromeDriver();
+	public String baseUrl = "https://c6-staging.fabheads.com/login";
+    String driverPath = "E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver99\\chromedriver.exe";
+    public WebDriver proDriver ; 
 	
 	  @Test
-	  public void first() 
+	  public void firstMavenTestng() throws InterruptedException 
 	  {
-		   System.out.println("TESTNG WITH MAVEN  " ); 	  
-	  }
-  
-	  @BeforeClass
-	  public void beforeClass() throws InterruptedException 
-	  {
-		 
-		   //Create the Chrome driver object to 
-		  	System.setProperty("webdriver.chrome.driver", "E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver99\\chromedriver.exe");
-			WebDriver proDriver = new ChromeDriver();
-			
+		  
+		  System.out.println("launching Chrome browser"); 
+	      System.setProperty("webdriver.chrome.driver", driverPath);
+	      proDriver = new ChromeDriver();
+	      proDriver.get(baseUrl);
 																
-			//Maximize the screen 
+	      //Maximize the screen 
 			proDriver.manage().window().maximize();
 			Thread.sleep(2000);
 			
@@ -40,13 +36,16 @@ public class TestngScriptMAVEN
 			String Name =proDriver.getTitle();
 			System.out.println("PAGE TITLE : "+Name);
 	  }
+  
+	  @BeforeClass
+	  public void beforeClass() throws InterruptedException 
+	  {
+		  System.out.println("TESTNG WITH MAVEN  " ); 	  
+	  }
 
 	  @AfterClass
 	  public void afterClass() throws InterruptedException
 	  {
-		  
-		  	WebDriver proDriver = new ChromeDriver();
-		  
 		  	WebElement myemail=proDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
 			myemail.sendKeys("vaibhavsharma3070@gmail.com");
 			Thread.sleep(1000);
@@ -58,7 +57,8 @@ public class TestngScriptMAVEN
 			//CLick on SIGNIN
 			proDriver.findElement(By.xpath("//ion-button[@id='login-button']")).click();
 			Thread.sleep(2000);
+			
+			proDriver.close();
 	  }
 	
-	//proDriver.close();
 }
