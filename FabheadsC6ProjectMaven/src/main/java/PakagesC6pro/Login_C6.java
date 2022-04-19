@@ -41,6 +41,5 @@ public class Login_C6
 			Thread.sleep(2000);
 	
 			//avDriver.close();
-		}
-		
+		}		
 }
