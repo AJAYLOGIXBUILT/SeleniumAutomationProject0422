@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.opentelemetry.exporter.logging.SystemOutLogExporter;
+
 public class Register_C6 {
 
 		public static void main(String[] args) throws InterruptedException, IOException	
@@ -30,11 +32,15 @@ public class Register_C6 {
 			
 			//Click on Register account link
 			avDriver.findElement(By.xpath("//div[contains(text(),'Register for a new account')]")).click();
-			Thread.sleep(3000);			
+			Thread.sleep(3000);		
+
+		
 			
 			//Fill Email 
 			WebElement myemail=avDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-register[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
 			myemail.sendKeys("vaibhavsharma3070@gmail.com");
+			//myemail.sendKeys("vaibhavvalidation@tempmail.win");
+			//myemail.sendKeys("vaibhavsharmaautomation@tempmail.win");
 				
 			//Filled Password 
 			WebElement mypsd=avDriver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-register[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[2]/ion-input[1]/input[1]"));
@@ -48,27 +54,23 @@ public class Register_C6 {
 			
 			//CLick on SIGNIN
 			avDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-register[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-button[1]")).click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			
-			try
+					
+			String myerror=avDriver.findElement(By.xpath("//p[contains(text(),'A user is already registered with this e-mail addr')]")).getText();
+			System.out.println("Validation Message is : " +myerror);
+			String erromesage ="A user is already registered with this e-mail address.";
+					
+			if(myerror.equals(erromesage))
 			{
-		
-				WebElement myerror=avDriver.findElement(By.xpath("//p[contains(text(),'A user is already registered with this e-mail addr')]"));
-				String Emma ="A user is already registered with this e-mail addr";
-			
-				if(myerror.equals(Emma))
-				{
-					System.out.println("USER EMAIL IS ALREADY EXISTS, try another");	
-				}
+				System.out.println("USER EMAIL IS ALREADY EXISTS, Try with new email ");	
+			}
+			else		
+			{			
+				System.out.println("REGISTER SUCCESSFULLY");	
+			}
 				
-			}
-			catch(Exception e)
-			{
-				System.out.println("USER EMAIL IS ALREADY EXISTS");	
-			}
-
-			avDriver.close();
-			
+		//avDriver.close();
+		
 		}
-	
 }
