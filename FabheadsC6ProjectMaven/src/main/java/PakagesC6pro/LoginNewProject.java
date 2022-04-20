@@ -1,5 +1,6 @@
 package PakagesC6pro;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginNewProject {
 
-	public static void main(String[] args) throws InterruptedException {
+	
+		public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver99\\chromedriver.exe");
 		
@@ -25,17 +27,18 @@ public class LoginNewProject {
 		String Name =proDriver.getTitle();
 		System.out.println("PAGE TITLE : "+Name);
 
-		WebElement myemail=proDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
-		myemail.sendKeys("vaibhavsharma3070@gmail.com");
-		Thread.sleep(1000);
-		
-		WebElement mypsd=proDriver.findElement(By.xpath("//body[1]/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[2]/ion-input[1]/input[1]"));
-		mypsd.sendKeys("Test@123");
-		Thread.sleep(2000);
-		
-		//CLick on SIGNIN
-		proDriver.findElement(By.xpath("//ion-button[@id='login-button']")).click();
-		Thread.sleep(2000);
+	
+			WebElement myemail=proDriver.findElement(By.xpath("//body/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[1]/ion-input[1]/input[1]"));
+			myemail.sendKeys("vaibhavsharma3070@gmail.com");
+			Thread.sleep(1000);
+			
+			WebElement mypsd=proDriver.findElement(By.xpath("//body[1]/app-root[1]/ion-app[1]/ion-router-outlet[1]/app-login[1]/ion-content[1]/div[1]/div[1]/div[4]/ion-list[1]/ion-item[2]/ion-input[1]/input[1]"));
+			mypsd.sendKeys("Test@123");
+			Thread.sleep(2000);
+			
+			//CLick on SIGNIN
+			proDriver.findElement(By.xpath("//ion-button[@id='login-button']")).click();
+			Thread.sleep(2000);
 		
 		
 		proDriver.findElement(By.xpath("//ion-button[contains(text(),'New Project')]")).click();
@@ -57,5 +60,6 @@ public class LoginNewProject {
 		
 		proDriver.close();
 				
-	}		
+	}
+	
 }

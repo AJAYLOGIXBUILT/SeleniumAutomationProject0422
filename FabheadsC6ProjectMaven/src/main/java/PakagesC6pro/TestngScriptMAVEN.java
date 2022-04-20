@@ -58,6 +58,8 @@ public class TestngScriptMAVEN
 			proDriver.findElement(By.xpath("//ion-button[@id='login-button']")).click();
 			Thread.sleep(2000);
 			
+			System.out.println("USER LOGIN SUCCESSFULLY"); 	
+			
 			proDriver.close();
 	  }
 	
