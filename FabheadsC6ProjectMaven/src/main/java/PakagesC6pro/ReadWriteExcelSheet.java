@@ -36,7 +36,7 @@ public class ReadWriteExcelSheet
         //creating workbook instance that refers to .xlsx file
         XSSFWorkbook wb=new XSSFWorkbook(inputStream);
                
-        //creating a Sheet object
+        //creating a Sheet object using the sheet Name
         XSSFSheet sheet=wb.getSheet("Logins");
         
         //get all rows in the sheet
@@ -50,7 +50,7 @@ public class ReadWriteExcelSheet
            int cellcount=sheet.getRow(i).getLastCellNum();
             
            //iterate over each cell to print its value
-           System.out.print("Row "+i +" data is :");
+           System.out.print("Row "+i+" data is :");
             
            for(int j=0;j<cellcount;j++)
            {
