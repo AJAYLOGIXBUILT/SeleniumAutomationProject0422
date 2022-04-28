@@ -63,3 +63,23 @@ public class LoginNewProject {
 	}
 	
 }
+
+
+/*
+
+// creating object of Robot class
+Robot rb = new Robot();
+
+
+KeyPress(): This method is called when we want to press any key.
+Example: robot.keyPress(KeyEvent.VK_ENTER);
+KeyRelease(): This method is used to release the pressed key.
+Example: robot.keyRelease(KeyEvent.VK_ENTER);
+MouseMove(): Used when there is a need of moving the mouse pointer over ‘X’ and ‘Y’ coordinates.
+Example: robot.mouseMove(coordinates.get.X(), coordinates.get.Y());
+MousePress(): This method is called when we want to press the left mouse button.
+Example: robot.mousePress(InputEvent.BUTTON_MASK);
+MouseRelease(): This method is used to release the pressed mouse button.
+Example: robot.mouseRelease(InputEvent.BUTTON_DOWN_MASK)
+
+*/
