@@ -33,7 +33,7 @@ public class ReadWriteExcelSheet
         //Create an object of FileInputStream class to read excel file
         FileInputStream inputStream = new FileInputStream(file);
         
-       //creating workbook instance that refers to .xlsx file
+        //creating workbook instance that refers to .xlsx file
         XSSFWorkbook wb=new XSSFWorkbook(inputStream);
                
         //creating a Sheet object
