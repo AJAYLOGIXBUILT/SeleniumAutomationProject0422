@@ -5,8 +5,8 @@
     <classes>
       <class name="PakagesC6pro.TestngScriptMAVEN">
         <methods>
+          <include name="firstMavenTestng"/>
           <include name="beforeClass"/>
-          <include name="first"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- PakagesC6pro.TestngScriptMAVEN -->
